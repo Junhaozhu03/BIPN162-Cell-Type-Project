@@ -1,2 +1,26 @@
+%matplotlib inline
 
-git clone <gh repo clone Junhaozhu03/BIPN162_Final_Project>
+import os
+from collections import Counter
+
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib import cm
+
+from scipy.signal import periodogram
+
+# MNE & associated code
+import mne
+from mne.preprocessing import ICA, read_ica
+from mne.utils import _time_mask
+
+from autoreject import AutoReject, read_auto_reject
+from autoreject.autoreject import _apply_interp
+
+# FOOOF, and custom helper & utility functions
+from fooof import FOOOF, FOOOFGroup
+from fooof.objs import average_fg
+from fooof.plts import plot_spectrum
+from fooof.utils import trim_spectrum
+from fooof.data import FOOOFSettings
+from fooof.analysis import get_band_peak_fm, get_band_peak_fg
